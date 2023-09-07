@@ -19,7 +19,7 @@ class CreateNftsTable extends Migration
             $table->string('title', 100);
             $table->string('artist');
             $table->string('owner');
-            $table->string('category');
+            $table->enum('category', ['collectible', 'metaverse', 'utility', 'online video game']);
             $table->text('description', 255);
             $table->string('contractUrl')->unique();
             $table->enum('token', ['ERC-721', 'ERC-1155', 'ERC-998']);
@@ -28,7 +28,6 @@ class CreateNftsTable extends Migration
             $table->timestamps();
 
             $table->foreign('owner')->references('email')->on('users');
-            $table->foreign('category')->references('title')->on('category');
         });
     }
 

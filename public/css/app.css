@@ -7,9 +7,11 @@ header{
     flex-flow: row;
     border: 2px solid black;
     width: 100%;
-    column-gap: 3rem;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
 }
 
 header img{
     width: 4rem;
 }
+

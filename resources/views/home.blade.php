@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NFT Market</title>
-</head>
-<body>
-<h1>CECI EST UN TEST</h1>
-</body>
-</html>
+@extends('layouts.header')
+@section('titrePage', 'Home')
+
+@section('contentMain')
+<ul>
+    <li><button>All</button></li>
+    <li><button>Collectible</button></li>
+    <li><button>Metaverse</button></li>
+    <li><button>Utility</button></li>
+    <li><button>Online video game</button></li>
+</ul>
+<section>
+    <article class="card">
+        <figure>
+            <img src="{{ asset('images/nft-01.jpg') }}" alt="nft">
+            <figcaption class="card-caption">nft description</figcaption>
+        </figure>
+        <section>
+            <ul>
+                <li>TITLE</li>
+                <li>CATEGORY</li>
+            </ul>
+            <p>0.0025 ETH</p>
+        </section>
+        <button>BUY</button>
+    </article>
+</section>
+@endsection
+
