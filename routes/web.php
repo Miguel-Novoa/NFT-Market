@@ -27,6 +27,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [UserController::class, 'login'])->name('users.login');
 Route::get('/register', [UserController::class, 'register'])->name('users.register');
 Route::post('/register', [UserController::class, 'store'])->name('users.store');
+Route::post('/authentificate', [UserController::class, 'authentificate'])->name('users.authentificate');
+Route::get('/logout', [UserController::class, 'logout'])->name('users.logout');
 
 // Routes dédiées au parcours administrateur
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');

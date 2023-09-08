@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->decimal('wallet',8,2)->default(100);
             $table->boolean('isAdmin')->default(false);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

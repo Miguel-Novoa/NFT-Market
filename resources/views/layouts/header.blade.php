@@ -9,8 +9,12 @@
         <a href="">List</a>
         <a href="">My Collection</a>
     </nav>
-    <p>150 ETH</p>
+    @if (auth()->check())
+    <p>{{ auth()->user()->wallet }}ETH</p>
+    <a href="{{ route('users.logout') }}">Logout</a>
+    @else
     <a href="{{ route('users.login') }}">Login</a>
+    @endif
 </header>
 <main>
     @yield('contentMain')
