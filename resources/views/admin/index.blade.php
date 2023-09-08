@@ -9,9 +9,13 @@
         <th>nfts</th>
     </thead>
     <tbody>
-        <td>mail@mail.com</td>
-        <td>0.125 ETH</td>
-        <td>2</td>
+        @foreach ($user as $user)
+        <tr>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->wallet }} ETH</td>
+            <td>2</td>
+        </tr>
+        @endforeach
     </tbody>
 </table>
 @endsection

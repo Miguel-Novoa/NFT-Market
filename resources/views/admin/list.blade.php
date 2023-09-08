@@ -12,12 +12,16 @@
         <th></th>
     </thead>
     <tbody>
-        <td>nft luffy</td>
-        <td>Eichiro Oda</td>
-        <td>Miguel</td>
-        <td>16 ETH</td>
-        <td>Collectible</td>
-        <td><button>DELETE</button></td>
+        @foreach ($nft as $nft)
+        <tr>
+            <td>{{ $nft->title }}</td>
+            <td>{{ $nft->artist }}</td>
+            <td>{{ $nft->owner }}</td>
+            <td>{{ $nft->price }}ETH</td>
+            <td>{{ $nft->category }}</td>
+            <td><button>DELETE</button></td>
+        </tr>
+        @endforeach
     </tbody>
 </table>
 @endsection

@@ -18,7 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->decimal('wallet',8,2);
+            $table->decimal('wallet',8,2)->default(100);
+            $table->boolean('isAdmin')->default(false);
             $table->timestamps();
         });
     }

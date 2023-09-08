@@ -2,7 +2,8 @@
 
 @section('titrePage', 'Add')
 @section('contentMain')
-<form action="" method="post" enctype="multipart/form-data">
+<form action="{{ route('nft.store') }}" method="post" enctype="multipart/form-data">
+    @csrf
     <input type="text" name="title" id="title" placeholder="Title...">
     <input type="text" name="artist" id="artist" placeholder="Artist...">
     <input type="text" name="owner" id="owner" placeholder="Owner...">
@@ -13,7 +14,7 @@
         <option value="online video game">Online video game</option>
         <option value="utility">Utility</option>
     </select>
-    <select name="token standard" id="token">
+    <select name="token" id="token">
         <option value="">--Please choose an option--</option>
         <option value="ERC-721">ERC-721</option>
         <option value="ERC-1155">ERC-1155</option>

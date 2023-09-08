@@ -10,20 +10,22 @@
     <li><button>Online video game</button></li>
 </ul>
 <section>
+    @foreach ($nft as $nft)
     <article class="card">
         <figure>
-            <img src="{{ asset('images/nft-01.jpg') }}" alt="nft">
+            <img src="{{ asset($nft->image) }}" alt="nft">
             <figcaption class="card-caption">nft description</figcaption>
         </figure>
         <section>
             <ul>
-                <li>TITLE</li>
-                <li>CATEGORY</li>
+                <li>{{$nft->title}}</li>
+                <li>{{$nft->category}}</li>
             </ul>
-            <p>0.0025 ETH</p>
+            <p>{{$nft->price}} ETH</p>
         </section>
         <button>BUY</button>
     </article>
+    @endforeach
 </section>
 @endsection
 

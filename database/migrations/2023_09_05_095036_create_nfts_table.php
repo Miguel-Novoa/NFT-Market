@@ -14,11 +14,11 @@ class CreateNftsTable extends Migration
 
     public function up()
     {
-        Schema::create('nft', function (Blueprint $table) {
+        Schema::create('nfts', function (Blueprint $table) {
             $table->id();
             $table->string('title', 100);
             $table->string('artist');
-            $table->string('owner');
+            $table->string('owner')->nullable();
             $table->enum('category', ['collectible', 'metaverse', 'utility', 'online video game']);
             $table->text('description', 255);
             $table->string('contractUrl')->unique();
