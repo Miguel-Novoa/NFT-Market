@@ -49,8 +49,7 @@ header a:hover{
 .headerEnd{
     display: flex;
     flex-flow: row;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -64,4 +63,3 @@ header a:hover{
     padding: 2rem 1rem;
     display: block;
 }
-
