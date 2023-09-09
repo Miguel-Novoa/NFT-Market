@@ -3,10 +3,10 @@
 @section('titrePage', 'Login')
 
 @section('contentMain')
-<form action="" method="get">
+<form action="{{ route('admin.authentificate') }}" method="post">
     @csrf
     <input type="email" name="email" id="email" placeholder="Username...">
     <input type="password" name="password" id="password" placeholder="Password...">
-    <button>Login</button>
+    <button type="submit">Login</button>
 </form>
 @endsection

@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
-
+use App\Models\User;
+use App\Models\Nft;
 class UserController extends Controller
 {
     public function login(): View
@@ -32,6 +33,7 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->password = $request->input('password');
         $confirmPassword = $request->input('confirmPassword');
+
         if($user->password === $confirmPassword){
             $user->password = Hash::make($request->input('password'));
             $user->save();
@@ -57,12 +59,29 @@ class UserController extends Controller
     }
 
     public function logout(Request $request): RedirectResponse
-{
-    Auth::logout();
+    {
+        Auth::logout();
 
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-    return redirect('/home');
-}
+        return redirect('/home');
+    }
+
+    public function collection()
+    {
+        $user = auth()->user();
+        $nfts = Nft::all();
+        $collection = [];
+
+        if (Auth::check()) {
+            foreach ($nfts as $nft) {
+                if ($nft->owner === $user->email) {
+                    $collection[] = $nft;
+                }
+            }
+        }
+
+        return view('users.collection', compact('collection'));
+    }
 }

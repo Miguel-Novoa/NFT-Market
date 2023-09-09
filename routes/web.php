@@ -29,12 +29,18 @@ Route::get('/register', [UserController::class, 'register'])->name('users.regist
 Route::post('/register', [UserController::class, 'store'])->name('users.store');
 Route::post('/authentificate', [UserController::class, 'authentificate'])->name('users.authentificate');
 Route::get('/logout', [UserController::class, 'logout'])->name('users.logout');
+Route::get('/collection', [UserController::class, 'collection'])->name('users.collection');
 
 // Routes dédiées au parcours administrateur
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
 Route::get('/admin/list', [AdminController::class, 'list'])->name('admin.list');
 Route::get('/admin/add', [AdminController::class, 'add'])->name('admin.add');
+Route::post('/admin/authentificate', [AdminController::class, 'authentificate'])->name('admin.authentificate');
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 // Routes dédiées aux NFTs
 Route::post('/nft/create', [NftController::class, 'store'])->name('nft.store');
+Route::delete('/nft/{nft}', [NftController::class, 'destroy'])->name('nft.destroy');
+Route::post('/nft/buy/{nft}', [NftController::class, 'buy'])->name('nft.buy');
+Route::post('/nft/sell/{nft}', [NftController::class, 'sell'])->name('nft.sell');

@@ -10,7 +10,11 @@
         <a href="{{ route('admin.list') }}">NFT List</a>
         <a href="{{ route('admin.add') }}">Add NFT</a>
     </nav>
-    <a href="{{ route('admin.login') }}">Login</a>
+    @if (auth()->check())
+        <a href="{{ route('admin.login') }}">Logout</a>
+    @else
+        <a href="{{ route('admin.login') }}">Login</a>
+    @endif
 </header>
 <main>
     @yield('contentMain')

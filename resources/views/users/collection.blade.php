@@ -2,15 +2,8 @@
 @section('titrePage', 'Home')
 
 @section('contentMain')
-<ul>
-    <li><button>All</button></li>
-    <li><button>Collectible</button></li>
-    <li><button>Metaverse</button></li>
-    <li><button>Utility</button></li>
-    <li><button>Online video game</button></li>
-</ul>
 <section>
-    @foreach ($nft as $nft)
+    @foreach ($collection as $nft)
     <article class="card">
         <figure>
             <img src="{{ asset($nft->image) }}" alt="nft">
@@ -23,16 +16,11 @@
             </ul>
             <p>{{$nft->price}} ETH</p>
         </section>
-        @if ($nft->owner === null)
-        <form action="{{ route('nft.buy', $nft) }}" method="post">
+        <form action="{{ route('nft.sell', $nft) }}" method="post">
             @csrf
-            <button type="submit">BUY</button>
+            <button type="submit">SELL</button>
         </form>
-        @else
-        <button>SOLD</button>
-        @endif
     </article>
     @endforeach
 </section>
 @endsection
-

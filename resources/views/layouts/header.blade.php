@@ -6,8 +6,8 @@
         <img src="{{ asset('images/nft-market-logo.jpg') }}" alt="logo">
     </a>
     <nav>
-        <a href="">List</a>
-        <a href="">My Collection</a>
+        <a href="{{ route('home') }}">List</a>
+        <a href="{{ route('users.collection') }}">My Collection</a>
     </nav>
     @if (auth()->check())
     <p>{{ auth()->user()->wallet }}ETH</p>
