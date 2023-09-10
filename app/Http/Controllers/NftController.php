@@ -10,6 +10,10 @@ use App\Models\User;
 
 class NftController extends Controller
 {
+
+    /**
+     * Store the specified resource.
+     */
     public function store(Request $request)
     {
         $nft = new nft;
@@ -24,6 +28,13 @@ class NftController extends Controller
 
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'title' => 'required|string|max:100',
+            'artist' => 'required|string',
+            'category' => 'required',
+            'token' => 'required',
+            'description' => 'required|string|max:255',
+            'contractUrl' =>'required',
+            'price' => 'required'
         ]);
 
         if ($request->hasFile('image')) {
@@ -40,7 +51,6 @@ class NftController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Nft $nft)
@@ -49,6 +59,9 @@ class NftController extends Controller
         return redirect()->route('admin.list')->with('success', 'nft deleted !');
     }
 
+    /**
+     * Check if user as enough money to buy nft, then add the nft to the user collection.
+     */
     public function buy(Nft $nft)
     {
         if (auth()->check()){
@@ -71,6 +84,10 @@ class NftController extends Controller
         }
     }
 
+    /**
+     * Remove the nft from the user collection. Add the nft price to the user wallet.
+     * The nft is then available in the market.
+     */
     public function sell(Nft $nft)
     {
         if (auth()->check()){
@@ -88,6 +105,9 @@ class NftController extends Controller
         }
     }
 
+    /**
+     * Redirect to the nft details page.
+     */
     public function show(Nft $nft):View
     {
         return view('users.nft', compact('nft'));

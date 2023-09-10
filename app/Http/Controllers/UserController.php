@@ -11,11 +11,17 @@ use App\Models\User;
 use App\Models\Nft;
 class UserController extends Controller
 {
+    /**
+     * Redirect to login page.
+     */
     public function login(): View
     {
         return view('users.login');
     }
 
+    /**
+     * Redirect to register page.
+     */
     public function register(): View
     {
         return view('users.register');
@@ -43,6 +49,9 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * Authentificate user.
+     */
     public function authentificate(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
@@ -58,6 +67,9 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * Logout user.
+     */
     public function logout(Request $request): RedirectResponse
     {
         Auth::logout();
@@ -68,6 +80,9 @@ class UserController extends Controller
         return redirect('/home');
     }
 
+    /**
+     * Redirect to user's collection page.
+     */
     public function collection()
     {
         $user = auth()->user();

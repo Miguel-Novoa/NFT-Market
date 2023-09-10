@@ -9,12 +9,18 @@ use Illuminate\View\View;
 
 class HomeController extends Controller
 {
+    /**
+     * Redirect to home page.
+     */
     public function index(): View
     {
         $nftsArray = nft::all();
         return view('home', compact('nftsArray'));
     }
 
+    /**
+     * Filter nft list using button value.
+     */
     public function filter(Request $request)
     {
         $nfts = nft::all();
