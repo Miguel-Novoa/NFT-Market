@@ -16,14 +16,20 @@
         </section>
         <p class="description">{{ $nft->description }}</p>
         <p class="price">{{$nft->price}} ETH</p>
-        @if ($nft->owner === null)
-            <form class="buyForm" action="{{ route('nft.buy', $nft) }}" method="post">
+        @auth
+            @if (auth()->user()->wallet < $nft->price)
+                <button class="buy sold">BUY</button>
+            @elseif($nft->owner === null)
+                <form action="{{ route('nft.buy', $nft) }}" method="post">
                 @csrf
-                <button class="buy available" type="submit">BUY</button>
-            </form>
+                    <button class="buy available" type="submit">BUY</button>
+                </form>
             @else
-            <button class="buy sold">SOLD</button>
-        @endif
+                <button class="buy sold">SOLD</button>
+            @endif
+        @else
+            <button class="buy sold">BUY</button>
+        @endauth
     </div>
 </article>
 @endsection

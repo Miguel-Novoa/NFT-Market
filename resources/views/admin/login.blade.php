@@ -1,5 +1,9 @@
 @extends('layouts.adminHeader')
 
+@section('blockCSS')
+<link rel="stylesheet" href="{{ mix('css/login.css') }}">
+@endsection
+
 @section('titrePage', 'Login')
 
 @section('contentMain')
