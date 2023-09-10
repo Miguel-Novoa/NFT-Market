@@ -33,10 +33,10 @@ Route::get('/logout', [UserController::class, 'logout'])->name('users.logout');
 Route::get('/collection', [UserController::class, 'collection'])->name('users.collection');
 
 // Routes dédiées au parcours administrateur
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index')->middleware('auth');;
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index')->middleware('admin');
 Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
-Route::get('/admin/list', [AdminController::class, 'list'])->name('admin.list');
-Route::get('/admin/add', [AdminController::class, 'add'])->name('admin.add');
+Route::get('/admin/list', [AdminController::class, 'list'])->name('admin.list')->middleware('admin');;
+Route::get('/admin/add', [AdminController::class, 'add'])->name('admin.add')->middleware('admin');;
 Route::post('/admin/authentificate', [AdminController::class, 'authentificate'])->name('admin.authentificate');
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
