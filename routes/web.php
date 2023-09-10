@@ -45,3 +45,4 @@ Route::post('/nft/create', [NftController::class, 'store'])->name('nft.store');
 Route::delete('/nft/{nft}', [NftController::class, 'destroy'])->name('nft.destroy');
 Route::post('/nft/buy/{nft}', [NftController::class, 'buy'])->name('nft.buy');
 Route::post('/nft/sell/{nft}', [NftController::class, 'sell'])->name('nft.sell');
+Route::get('/nft/{nft}', [NftController::class, 'show'])->name('nft.show');

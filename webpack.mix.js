@@ -17,4 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/user/login.css', 'public/css', [])
     .postCss('resources/css/user/card.css', 'public/css', [])
     .postCss('resources/css/admin/table.css', 'public/css', [])
-    .postCss('resources/css/admin/add.css', 'public/css', []);
+    .postCss('resources/css/admin/add.css', 'public/css', [])
+    .postCss('resources/css/user/nft.css', 'public/css', []);

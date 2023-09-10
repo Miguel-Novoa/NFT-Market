@@ -19325,6 +19325,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/user/nft.css":
+/*!************************************!*\
+  !*** ./resources/css/user/nft.css ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/user/app.css":
 /*!************************************!*\
   !*** ./resources/css/user/app.css ***!
@@ -19711,6 +19724,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"css/login": 0,
 /******/ 			"css/reset": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/nft": 0,
 /******/ 			"css/add": 0
 /******/ 		};
 /******/ 		
@@ -19761,13 +19775,14 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/add"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/add"], () => (__webpack_require__("./resources/css/user/app.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/add"], () => (__webpack_require__("./resources/css/reset.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/add"], () => (__webpack_require__("./resources/css/user/login.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/add"], () => (__webpack_require__("./resources/css/user/card.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/add"], () => (__webpack_require__("./resources/css/admin/table.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/add"], () => (__webpack_require__("./resources/css/admin/add.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/nft","css/add"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/nft","css/add"], () => (__webpack_require__("./resources/css/user/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/nft","css/add"], () => (__webpack_require__("./resources/css/reset.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/nft","css/add"], () => (__webpack_require__("./resources/css/user/login.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/nft","css/add"], () => (__webpack_require__("./resources/css/user/card.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/nft","css/add"], () => (__webpack_require__("./resources/css/admin/table.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/nft","css/add"], () => (__webpack_require__("./resources/css/admin/add.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/table","css/card","css/login","css/reset","css/app","css/nft","css/add"], () => (__webpack_require__("./resources/css/user/nft.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 use App\Models\Nft;
 use App\Models\User;
 
@@ -85,5 +86,10 @@ class NftController extends Controller
         }else{
             return redirect('/home')->with('error', 'User not logged in.');
         }
+    }
+
+    public function show(Nft $nft):View
+    {
+        return view('users.nft', compact('nft'));
     }
 }

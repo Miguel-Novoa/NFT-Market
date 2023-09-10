@@ -11,7 +11,9 @@
 <section class="cards">
     @foreach ($collection as $nft)
     <article class="card">
-        <img src="{{ asset($nft->image) }}" alt="nftImage">
+        <a href="{{ route('nft.show', $nft) }}">
+            <img src="{{ asset($nft->image) }}" alt="nftImage">
+        </a>
         <div class="details" role="region">
             <section class="firstLine">
                 <h2 class="name">{{$nft->title}}</h2>
