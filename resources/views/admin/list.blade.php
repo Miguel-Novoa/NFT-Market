@@ -1,6 +1,10 @@
 @extends('layouts.adminHeader')
 @section('titrePage', 'List')
 
+@section('blockCSS')
+<link rel="stylesheet" href="{{ mix('css/table.css') }}">
+@endsection
+
 @section('contentMain')
 <table>
     <thead>
@@ -23,7 +27,7 @@
                 <form action="{{ route('nft.destroy', $nft) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit"
+                    <button class="deleteBtn" type="submit"
                     onclick="return confirm('Etes vous certain de vouloir supprimer cet enregistrement ?')">
                         Delete
                     </button>

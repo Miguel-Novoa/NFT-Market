@@ -1,0 +1,84 @@
+main{
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+form {
+    width: 40%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--main-color);
+    box-shadow: 0 4px 6px var(--tertiary-color);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 3rem;
+}
+
+form h1{
+    color: var(--tertiary-color);
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+input[type="text"],
+select,
+label {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 2px solid var(--tertiary-color);
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: black;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 2px solid var(--tertiary-color);
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: black;
+}
+
+select {
+    font-weight: bold;
+    color: var(--tertiary-color);
+}
+
+label {
+    font-weight: bold;
+    color: var(--tertiary-color);
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    width: 30%;
+    padding: 10px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--tertiary-color);
+    color: var(--main-color);
+    border: 2px solid var(--tertiary-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--main-color);
+    color: var(--tertiary-color);
+}

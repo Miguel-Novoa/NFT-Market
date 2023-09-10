@@ -1,9 +1,14 @@
 @extends('layouts.adminHeader')
 
+@section('blockCSS')
+<link rel="stylesheet" href="{{ mix('css/add.css') }}">
+@endsection
+
 @section('titrePage', 'Add')
 @section('contentMain')
 <form action="{{ route('nft.store') }}" method="post" enctype="multipart/form-data">
     @csrf
+    <h1>ADD NFT</h1>
     <input type="text" name="title" id="title" placeholder="Title...">
     <input type="text" name="artist" id="artist" placeholder="Artist...">
     <input type="text" name="owner" id="owner" placeholder="Owner...">
@@ -20,7 +25,7 @@
         <option value="ERC-1155">ERC-1155</option>
         <option value="ERC-998">ERC-998</option>
     </select>
-    <input type="text" name="description" id="description" placeholder="Description...">
+    <textarea name="description" id="description" cols="30" rows="10" placeholder="Description..."></textarea>
     <input type="text" name="contract" id="contract" placeholder="Contract URL...">
     <input type="text" name="price" id="price" placeholder="Price...">
     <label for="image">Upload NFT</label>

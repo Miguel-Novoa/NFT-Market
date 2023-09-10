@@ -1,4 +1,9 @@
 @extends('layouts.adminHeader')
+
+@section('blockCSS')
+<link rel="stylesheet" href="{{ mix('css/table.css') }}">
+@endsection
+
 @section('titrePage', 'Admin')
 
 @section('contentMain')
