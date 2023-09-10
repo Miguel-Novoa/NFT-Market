@@ -7,15 +7,28 @@
 @section('titrePage', 'Home')
 
 @section('contentMain')
-<ul class="filter">
-    <li><button>All</button></li>
-    <li><button>Collectible</button></li>
-    <li><button>Metaverse</button></li>
-    <li><button>Utility</button></li>
-    <li><button>Online video game</button></li>
-</ul>
+<form action="{{ route('home.filter') }}" method="post">
+    @csrf
+    <ul class="filter">
+        <li>
+            <button name="filterBtn" value="all" type="submit">All</button>
+        </li>
+        <li>
+            <button name="filterBtn" value="collectible" type="submit">Collectible</button>
+        </li>
+        <li>
+            <button name="filterBtn" value="metaverse" type="submit">Metaverse</button>
+        </li>
+        <li>
+            <button name="filterBtn" value="utility" type="submit">Utility</button>
+        </li>
+        <li>
+            <button name="filterBtn" value="online video game" type="submit">Online video game</button>
+        </li>
+    </ul>
+</form>
 <section class="cards">
-    @foreach ($nft as $nft)
+    @foreach ($nftsArray as $nft)
     <article class="card">
         <img src="{{ asset($nft->image) }}" alt="nftImage">
         <div class="details" role="region">

@@ -11,7 +11,23 @@ class HomeController extends Controller
 {
     public function index(): View
     {
-        $nft = nft::all();
-        return view('home', compact('nft'));
+        $nftsArray = nft::all();
+        return view('home', compact('nftsArray'));
+    }
+
+    public function filter(Request $request)
+    {
+        $nfts = nft::all();
+        $button = $request->input('filterBtn');
+        $nftsArray = [];
+
+        foreach($nfts as $nft){
+            if($button === 'all'){
+                $nftsArray[] = $nft;
+            }else if($nft->category === $button){
+                $nftsArray[] = $nft;
+            }
+        }
+        return view('home', compact('nftsArray'));
     }
 }

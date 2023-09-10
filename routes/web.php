@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/filter', [HomeController::class, 'filter'])->name('home.filter');
 
 // Routes dédiées au parcours utilisateur
 Route::get('/login', [UserController::class, 'login'])->name('users.login');
