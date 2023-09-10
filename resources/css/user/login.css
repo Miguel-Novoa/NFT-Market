@@ -60,3 +60,10 @@ form button:hover{
     font-weight: bold;
     border-bottom: 1px solid var(--tertiary-color);
 }
+
+
+@media screen and (max-width: 1000px){
+    form{
+        width: 60%;
+    }
+}

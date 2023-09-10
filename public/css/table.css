@@ -62,3 +62,18 @@ td:nth-child(3) {
     color: var(--tertiary-color);
 }
 
+@media screen and (max-width: 320px) {
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+
+    .deleteBtn {
+        font-size: 1.5rem;
+    }
+}
+

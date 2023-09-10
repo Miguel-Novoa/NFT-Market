@@ -82,3 +82,18 @@ button:hover {
     background-color: var(--main-color);
     color: var(--tertiary-color);
 }
+
+@media screen and (max-width: 320px) {
+    form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    input[type="text"],
+    select,
+    label,
+    textarea,
+    button {
+        margin-bottom: 10px;
+    }
+}

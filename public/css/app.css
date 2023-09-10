@@ -65,3 +65,33 @@ header a{
     display: block;
 }
 
+@media screen and (max-width: 320px) {
+    header {
+        flex-flow: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    header img {
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header a {
+        padding: 1rem;
+    }
+
+    .headerEnd {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wallet {
+        padding: 1rem;
+    }
+}
+
