@@ -55,8 +55,12 @@ class NftController extends Controller
      */
     public function destroy(Nft $nft)
     {
-        $nft->delete();
-        return redirect()->route('admin.list')->with('success', 'nft deleted !');
+        if($nft->owner === null){
+            $nft->delete();
+            return redirect()->route('admin.list')->with('success', 'nft deleted !');
+        }else{
+            return redirect()->route('admin.list')->with('Error', 'nft has an owner !');
+        }
     }
 
     /**

@@ -13,4 +13,5 @@
     <body class="antialiased">
         @yield('body')
     </body>
+    <script src="../js/app.js"></script>
 </html>
